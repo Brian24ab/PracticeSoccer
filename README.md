@@ -1,2 +1,13 @@
 # PracticeSoccer
-Practice Soccer is an app designed to help soccer athletes develop a consistent daily habit of practicing for at least 30 minutes each day. The app focuses on two key areas: dribbling and passing drills. The main target audience is young and upcoming soccer athletes, primarily between the ages of 6 to 20.
+
+A mobile app to help young soccer athletes (ages 6-20) develop consistent daily practice habits.
+
+## Features
+- 30-minute daily training sessions
+- Focus on dribbling and passing drills
+- Progress tracking
+
+## Getting Started
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
