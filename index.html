@@ -21,11 +21,23 @@
 
     <section class="hero-panel">
       <div>
-        <p class="session-label">Today&apos;s session</p>
+        <p class="session-label">Personal plan</p>
         <h2 id="sessionTitle">Ball Control Builder</h2>
-        <p id="sessionSummary">30 minutes of focused dribbling, passing, and finishing work.</p>
+        <p id="sessionSummary">Choose a level, follow today&apos;s session, and build a weekly soccer habit.</p>
       </div>
       <button id="startButton" class="primary-button" type="button">Start 30:00</button>
+    </section>
+
+    <section class="control-panel" aria-labelledby="planHeading">
+      <div class="section-heading compact">
+        <h2 id="planHeading">Training Plan</h2>
+        <span id="planLabel">Beginner</span>
+      </div>
+      <div class="level-tabs" role="group" aria-label="Choose training level">
+        <button class="level-button active" type="button" data-level="beginner">Beginner</button>
+        <button class="level-button" type="button" data-level="intermediate">Intermediate</button>
+        <button class="level-button" type="button" data-level="advanced">Advanced</button>
+      </div>
     </section>
 
     <section class="timer-panel" aria-live="polite">
@@ -41,10 +53,32 @@
 
     <section class="drill-list" aria-labelledby="drillsHeading">
       <div class="section-heading">
-        <h2 id="drillsHeading">Drills</h2>
+        <h2 id="drillsHeading">Today&apos;s Drills</h2>
         <span id="completedDrills">0/4 done</span>
       </div>
       <div id="drills"></div>
+    </section>
+
+    <section class="weekly-panel" aria-labelledby="weeklyHeading">
+      <div class="section-heading">
+        <h2 id="weeklyHeading">7-Day Focus</h2>
+        <span>training plan</span>
+      </div>
+      <div id="weeklyPlan" class="weekly-grid"></div>
+    </section>
+
+    <section class="coach-panel" aria-labelledby="coachHeading">
+      <div>
+        <p class="eyebrow">Coach mode</p>
+        <h2 id="coachHeading">Assign this week&apos;s work</h2>
+        <p>Create a simple weekly assignment players can copy into a team chat.</p>
+      </div>
+      <label>
+        Player or team name
+        <input id="playerName" type="text" placeholder="Example: U12 Strikers">
+      </label>
+      <button id="copyAssignment" type="button">Copy assignment</button>
+      <p id="copyStatus" class="status-text" aria-live="polite"></p>
     </section>
 
     <section class="stats-grid" aria-label="Progress stats">
