@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PracticeSoccer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="topbar" aria-label="Practice overview">
+      <div>
+        <p class="eyebrow">Daily training</p>
+        <h1>PracticeSoccer</h1>
+      </div>
+      <div class="streak-card" aria-label="Current streak">
+        <span id="streakCount">0</span>
+        <small>day streak</small>
+      </div>
+    </section>
+
+    <section class="hero-panel">
+      <div>
+        <p class="session-label">Today&apos;s session</p>
+        <h2 id="sessionTitle">Ball Control Builder</h2>
+        <p id="sessionSummary">30 minutes of focused dribbling, passing, and finishing work.</p>
+      </div>
+      <button id="startButton" class="primary-button" type="button">Start 30:00</button>
+    </section>
+
+    <section class="timer-panel" aria-live="polite">
+      <div class="timer-ring">
+        <span id="timerDisplay">30:00</span>
+      </div>
+      <div class="timer-actions">
+        <button id="pauseButton" type="button">Pause</button>
+        <button id="resetButton" type="button">Reset</button>
+        <button id="completeButton" type="button">Complete</button>
+      </div>
+    </section>
+
+    <section class="drill-list" aria-labelledby="drillsHeading">
+      <div class="section-heading">
+        <h2 id="drillsHeading">Drills</h2>
+        <span id="completedDrills">0/4 done</span>
+      </div>
+      <div id="drills"></div>
+    </section>
+
+    <section class="stats-grid" aria-label="Progress stats">
+      <article>
+        <span id="sessionsCount">0</span>
+        <p>sessions</p>
+      </article>
+      <article>
+        <span id="minutesCount">0</span>
+        <p>minutes</p>
+      </article>
+      <article>
+        <span id="bestStreak">0</span>
+        <p>best streak</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
