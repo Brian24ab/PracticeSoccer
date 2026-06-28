@@ -7,6 +7,7 @@
   --panel: #ffffff;
   --field: #eef7f1;
   --accent: #f3b43f;
+  --blue: #246b9b;
   --shadow: 0 18px 45px rgba(23, 48, 36, 0.14);
 }
 
@@ -22,12 +23,34 @@ body {
   color: var(--ink);
 }
 
-button {
+button,
+a.primary-link {
   border: 0;
   border-radius: 8px;
   font: inherit;
   font-weight: 700;
   cursor: pointer;
+}
+
+a {
+  color: var(--blue);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+input {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font: inherit;
+}
+
+label {
+  color: var(--muted);
+  font-weight: 800;
 }
 
 .app-shell {
@@ -38,8 +61,12 @@ button {
 
 .topbar,
 .hero-panel,
+.control-panel,
 .timer-panel,
 .drill-list,
+.weekly-panel,
+.coach-panel,
+.offer-panel,
 .stats-grid article {
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(31, 122, 77, 0.14);
@@ -67,6 +94,7 @@ button {
 
 h1,
 h2,
+h3,
 p {
   margin-top: 0;
 }
@@ -116,18 +144,56 @@ h1 {
   color: rgba(255, 255, 255, 0.86);
 }
 
-.primary-button {
+.primary-button,
+a.primary-link {
   min-height: 52px;
   background: var(--accent);
   color: #241909;
 }
 
-.timer-panel {
-  display: grid;
-  gap: 16px;
+a.primary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+.control-panel,
+.timer-panel,
+.drill-list,
+.weekly-panel,
+.coach-panel,
+.offer-panel {
   margin-top: 18px;
   padding: 18px;
   border-radius: 8px;
+}
+
+.control-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.level-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.level-button {
+  min-height: 42px;
+  background: var(--field);
+  color: var(--ink);
+}
+
+.level-button.active {
+  background: var(--grass);
+  color: white;
+}
+
+.timer-panel {
+  display: grid;
+  gap: 16px;
 }
 
 .timer-ring {
@@ -153,16 +219,11 @@ h1 {
   gap: 10px;
 }
 
-.timer-actions button {
+.timer-actions button,
+.coach-panel button {
   min-height: 44px;
   background: var(--field);
   color: var(--ink);
-}
-
-.drill-list {
-  margin-top: 18px;
-  padding: 18px;
-  border-radius: 8px;
 }
 
 .section-heading {
@@ -171,6 +232,10 @@ h1 {
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 12px;
+}
+
+.section-heading.compact {
+  margin-bottom: 0;
 }
 
 .section-heading h2 {
@@ -198,6 +263,7 @@ h1 {
 .drill-item input {
   width: 22px;
   height: 22px;
+  margin-top: 0;
   accent-color: var(--grass);
 }
 
@@ -215,6 +281,69 @@ h1 {
 .drill-time {
   color: var(--grass);
   font-weight: 900;
+}
+
+.weekly-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.week-card {
+  min-height: 86px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdfb;
+}
+
+.week-card span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.week-card strong {
+  display: block;
+}
+
+.coach-panel,
+.offer-panel {
+  display: grid;
+  gap: 14px;
+}
+
+.coach-panel button {
+  background: var(--grass);
+  color: white;
+}
+
+.status-text {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.offer-panel {
+  background: linear-gradient(135deg, #ffffff, #fff7e6);
+}
+
+.offer-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.offer-actions a:not(.primary-link) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
 }
 
 .stats-grid {
@@ -256,5 +385,19 @@ h1 {
 
   .timer-actions {
     align-self: center;
+  }
+
+  .weekly-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .coach-panel,
+  .offer-panel {
+    grid-template-columns: 1fr 240px;
+    align-items: center;
+  }
+
+  .offer-actions {
+    align-self: stretch;
   }
 }
